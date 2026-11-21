@@ -1,0 +1,331 @@
+body {
+    background-color: #333333;
+    color: #e6e6e6;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    --h3-padding-left: 16px;
+
+    --theme-color-primary: #e6e6e6;
+    --theme-color-body-bg: #333333;
+    --theme-color-box-bg: #232323;
+}
+
+/* Headers */
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+
+    /*background: linear-gradient(90deg, #e6e6e6 -10%, #333333 25%, #333333 50%, #333333 75%, #e6e6e6 110%);*/
+
+    /* Border Seperator */
+    border-bottom-width: 3px;
+    border-bottom-style: dotted;
+    border-color: var(--theme-color-primary);
+
+    margin-top: 0px;
+    padding-top: 16px;
+}
+
+h2 {
+    border-left: var(--theme-color-primary) dotted 4px;
+    border-right: var(--theme-color-body-bg) dotted 16px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    transform: rotateZ(-2deg);
+
+    background-color: #161616;
+
+    box-shadow: rgba(255, 255, 255, 0.2) -20px -10px
+}
+
+h2 + * {
+    background-color: var(--theme-color-box-bg);
+
+    box-shadow: var(--theme-color-primary) 0px -30px;
+
+    padding-top: 0.6em;
+}
+
+h3 {
+    border-left: var(--theme-color-primary) dotted 4px;
+
+    padding-left: var(--h3-padding-left);
+    
+    background-color: #161616;
+
+    margin: 8px;
+
+    box-shadow: rgba(255, 255, 255, 0.2) -5px -5px
+}
+
+/* Paragraphs */
+
+h3 + p {
+    margin-top: 8px;
+    padding-left: var(--h3-padding-left);
+}
+
+.inner-thought {    
+    color: #aaaaaa;
+    font-size: 0.9em;
+}
+
+/* Splitters */
+
+.main-splitter {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-splitter > div {
+    /* 50% of the page */
+    width: 0.5rem;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    /* Position and Rendering */
+    --main-splitter-margin-px: 16px;
+    --main-splitter-padding-px: 8px;
+    margin: var(--main-splitter-margin-px);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: var(--main-splitter-padding-px);
+
+    /* Color */
+    background-color: var(--theme-color-box-bg);
+
+    border-right: #e6e6e6 double 1em;
+    /*border-top: #e6e6e6 double 1em;*/
+}
+
+.main-splitter > .vert-splitter {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    
+    top: 0px;
+
+    height: 98vh;
+
+    border-right: unset;
+    border-left: #e6e6e6 double 1em;
+}
+
+.vert-splitter > div {
+    flex: 1 1 auto;
+    height: 0.1rem;
+}
+
+.img-mobile-outline {
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+
+    height: 50vh;
+}
+
+#image-container {
+    /*
+    padding-top: 20%;
+    padding-bottom:20%;
+    padding-left:5%;
+    padding-right:5%;
+    */
+
+    padding: 0px;
+
+    flex: 2 1 auto;
+    height: 0.8rem;
+}
+
+#image-container > img {
+    position: absolute;
+
+    /*                                                  left + right               left + rigth          */
+    /* 50% viewport - (padding-left + padding-right + (parent.div.margin * 2) + (parent.div.padding * 2))*/
+    /*width: calc(50vw - (10% + (var(--main-splitter-margin-px) * 2) + (var(--main-splitter-padding-px) * 2)));*/
+    width: 98%;
+    height: 100%;
+    max-height: 50%;
+}
+
+/* Section Buttons */
+
+#image-container > button {
+    position: relative;
+    display: inline;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+}
+
+#section-btn-palette-name {
+    /*
+    top: 150px;
+    left: 38px;*/
+    width: 25%;
+    height: 10%;
+}
+
+#section-btn-view-mode {
+    /*
+    top: 155px;
+    left: 300px;
+    width: 185px;
+    height: 40px;*/
+
+    width: 30%;
+    left: 10%;
+    top: -2%;
+}
+
+#section-btn-palette-select {
+    /*
+    top: 150px;
+    left: 630px;*/
+
+    float: right;
+    width: 10%;
+    height: 10%;
+}
+
+#section-btn-quote {
+    width: 50%;
+    height: 5%;
+
+    top: 70%;
+}
+
+#section-btn-saving-export {
+    float: right;
+
+    width: 15%;
+    height: 8%;
+
+    top:83%;
+}
+
+#section-btn-color-swatch {
+    width: 10%;
+    height: 32%;
+
+    top: 4%;
+    left: -8%;
+}
+
+#section-btn-color-swatch-editor {
+    float: right;
+    width: 20%;
+    height: 5%;
+
+    top: -2%;
+    left:-25%;
+}
+
+#section-btn-palette-splitter {
+    width: 10%;
+    height: 10%;
+
+    top: 5%;
+    left: 20%;
+}
+
+#section-btn-click {
+    float: right;
+    width: 10%;
+    height: 10%;
+
+    top: 22%;
+    right: 25%;
+}
+
+/* Dynamic Element Classes */
+
+.hovered-anchor {
+    background-color: rgba(155, 155, 255, 0.1);
+}
+
+h2.hovered-anchor {
+    background-color: rgb(55, 55, 155);
+}
+
+/* Added to anchor elements by javascript */
+.jumped-to-anchor {
+    background-color: rgba(155, 155, 255, 0.2);
+    transform: scale(1.1);
+}
+
+h2.jumped-to-anchor {
+    background-color: rgb(55, 55, 155);
+    transform: unset;
+}
+
+h2.jumped-to-anchor + * {
+    box-shadow: var(--theme-color-primary) 0px -20px;
+}
+
+.jumped-to-anchor + p {
+    background-color: rgba(155, 155, 255, 0.2);
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .main-splitter {
+        width: 96vw;
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    .main-splitter > div {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        width: 85vw;
+
+        border-width: 0px;
+
+        border-top: #e6e6e6 double 8px;
+    }
+
+    .main-splitter > .vert-splitter {
+        top: 5px;
+        height: 22vh;
+        border-bottom: #e6e6e6 double 8px;
+        border-left: unset;
+
+        margin-bottom: 1em;
+
+        box-shadow: rgba(0.2, 0.2, 0.2, 0.4) 0px 10px;
+    }
+
+    .vert-splitter > div {
+        display: none;
+    }
+
+    #image-container {
+        display: block;
+        flex: 0 1 auto;
+    }
+
+    #image-container > img {
+        padding: 0px;
+        width: unset; /*91%*/
+        height: 92%;
+        max-height: unset;
+    }
+
+    #image-container > button {
+        display: none;
+    }
+}

@@ -3,48 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puma</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="./js/scripts.js"></script>
+    <title>Palette Picker Proposal</title>
+
+    <link href="./styles.css" rel="stylesheet">
+    <script src="./scripts.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Our Puma Vacation Website</h1>
-        </header>
+    <h1>Palette Picker Proposal</h1>
+    <section class="main-splitter">
+        <div>
+            <h2>Introduction</h2>
+            <p>
+                Hi this is a color swatch "program" that I wanted to make for a bit, as an artist that also dabbles into the fields of computer science 
+                I feel that it was appropriate to work on an application to help with the color making process as a "free time" task.<br>
+                Usually colors appear out of the blue in my brain or even at times when im just playing with the color wheel and dropping it onto the canvas.
+            </p>
+            <p>
+                This is a realization of that idea turning into something a bit more robust and focused towards making the color picking process more fun and just overall enjoyable to play with.
+            </p>
+            <p>
+                I want the UI to be something that's similar to a bath bomb to serve as a metaphor for the explosive capabilities it has as bursts of color being the life that breathes into a canvas.
+            </p>
+            <h2>Design</h2>
+            <p>
+                The UI will be separated into 2 distinct zones, one being the actual water and the other being the open space to drop the color into, 
+                aka <strong>Swatch Zone</strong> and <strong>Name Zone</strong>.
+            </p>
+            <h3>Swatch Zone</h3>
+            <p>
+                The swatch zone serves as a way to drop the colors into the black line at the center as the colors begin to mix and blend closely to one another.<br>
+                This lets the viewer view the changes of the color as it progresses and make educated decisions for changes.<br>
+                There will also be clear separators that displays the swatches, allowing for quick edits to see the results live in real time.
+            </p>
+            <h3>Naming Zone</h3>
+            <p>
+                The name zone is self-explanatory in that it presents the different zones that the colors reside and ways to describe them; 
+                separators create these splits by allowing more diverse palettes be zoned in between each other that builds the final result of a character palette for example.<br>
+                <span class="inner-thought">(I dabble mostly in character design so grouped colors and explanations help a lot with the designing process).</span>
+            </p>
+            <h2>Interactions</h2>
+            <p>
+                Overall theres a set of options one can interact with that edits the palette to what they desire.<br>
+                Some of these buttons are visible on demand to reduce clutter and to also let the viewer focus on the colors from a glance, its 
+                important to take a look at what the spectrum provides instead of focusing on one element at a time after all.
+            </p>
+            <h3 id="anchor-color-swatch">Color Swatch(es)</h3>
+            <p>
+                The core functionality of the editor is the adjustment of color swatches; palettes revolve around the use of them frequently, 
+                it only benefits the artist to interact with something that seems familiar to them.<br>
+                Other focuses also include: the use of adjusting the positions of the swatches - akin to gradient editors - to allow the adjustment of 
+                frequency between colors <span class="inner-thought">(typically shown in character references)</span>.
+            </p>
+            <h3 id="anchor-color-swatch-editor">Color Swatch Editor</h3>
+            <p>
+                Adjustments need to be made - they need to made in a reserved way to not be super intrusive to the changes being shown 
+                on screen.<br>
+                The swatch editor will present itself as a small set of text boxes above the swatch zone to allow adjustment in a place that isn't 
+                shifting around due to positioning. Creating muscle memory to hopefully speed up the flow of the tool when authoring colors.
+            </p>
+            <h3 id="anchor-palette-splitter"><i>Stopper</i> (Splitter)</h3>
+            <p>
+                At times when building a palette, there are instances that you'd wish to capture the color for later. Stoppers are a visual solution 
+                to the demands of such a request; with a way to split the color between 2 different zones, this opens the door for a sub-palette  
+                within the current palette.<br>
+                The creation of these splitters must also be simple, by clicking on the line you can add a stopper to your current position. 
+                It serves as a classic way of walling a section of water out with your hand that also works as a <i>wave-stopper</i> in tandem.
+            </p>
+            <h3 id="anchor-click">Color Drop (Clicks)</h3>
+            <p>
+                The actual 'bath-bomb' reference closely ties into the 'Color Drop', a spawnable color ball that contains the color to add alongside 
+                with building the satisfaction towards the process of creating palettes by channeling that inner rascal.
+            </p>
+            <h2>Misc. Buttons</h2>
+            <p>
+                The other buttons around the UI focus on more auxiliary actions.<br>
+                Tasks such as the export and import of the palette, saving the palette down into a persistent storage 
+                <span class="inner-thought">(it will auto save on an interval)</span>, and managing the palette itself.
+            </p>
+            <h3 id="anchor-view-mode">View Mode</h3>
+            <p>
+                The use a view modifier that allows you to view the palette in either a standard color or a monochromatic view (contrast testing).
+                This increases the usability and choices of colors ten-fold by allowing a quick glance at how colors interact with each other and what modifications can be done to adjust them.
+            </p>
+            <h3 id="anchor-palette-select">Palette Switcher</h3>
+            <p>
+                A palette view that lets you switch between other palettes quickly, 
+                I feel this is important to include as sometimes colors come up quickly as a passerby thought or even when taking a glance at something that appeals to you by its presentation.
+            </p>
+            <h3 id="anchor-quote">Motivational Quote</h3>
+            <p>
+                A motivational quote, not just because it fills in empty space, 
+                but to also get you going a bit further as the process of picking colors for me is always a daunting task even after years of playing with them.
+            </p>
+            <h3 id="anchor-palette-name">Palette Name</h3>
+            <p>
+                Naming your palette is important, you need to convey what you want these colors to do and for what purpose they must serve!
+            </p>
+            <h2 id="anchor-saving-export">Saving & Storage</h2>
+            <p>
+                The saving system is going to be something close to a base64 <span class="inner-thought">(a form of encoding)</span> 
+                string of text that you can send anywhere and paste into the site with, 
+                this lets anyone externally from your control contribute and to also take a peak to the colors you've made.
+            </p>
+            <p>
+                Art is an open medium and it should personally stay that way, so this encourages the idea of color choices being shared with others that they feel fits within their needs.
+            </p>
+            <h2>Mobile Layout & Responsive Design</h2>
+            <img src="MobileOutlineConcept.png" alt="Mobile Website Outline" height="400px" class="img-mobile-outline">
+            <p>
+                For a mobile design I plan to not really change too much other than reposition some elements to increase usability.<br>
+                The design might be something familiar to a note taking application but with a more color focused twist.<br>
+                Sadly, the motivational quotes have to go as it they take up too much space and I would need a whole new set of quotes to fit 
+                within the viewport.
+            </p>
+            <p>
+                Tablets mostly are unchanged as the viewport size is wide enough to carry the weight of the desktop view.
+            </p>
+            <h2>Conclusion</h2>
+            <p>
+                The end product is something that provides something of use towards others seeking to simplify the process of picking colors 
+                and to let their brains picture out the color choices that they wish to apply. 
+            </p>
+        </div>
+        <div class="vert-splitter">
+            <div>
+                <p id="click-notice" style="text-align: center;">
+                    There are clickable buttons below that corresponds to specific elements!
+                </p>
+            </div>
+            <div id="image-container">
+                <img src="DesktopOutlineConcept.png" alt="OutlineConcept">
 
-        <main>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">PumaNav</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./table.html">Table</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./weather.html">Weather</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <video width="320" height="240" controls onloadstart="videoFunction()">
-                <source src="myMovie.mp4" type="video/mp4">
-                Your browser does not support the video element!
-            </video>
-            <p id="myComment">My Personal Video: </p>
-            <audio controls>
-                <source src="mySound.mp3" type="audio/mp3">
-                Your browser does not support the audio element!
-            </audio>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EU-rZuJxdbw?si=wVYp8BoLicKFA-wj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </main>
-        <footer>
-            <p>Copyright &copy; 2026 <kbd>def-not-nick</kbd></p>
-        </footer>
-    </div>
+                <!-- Section Buttons -->
+                <button id="section-btn-palette-name">Palette Name</button>
+                <button id="section-btn-view-mode">View Mode</button>
+                <button id="section-btn-palette-select">Palette Selection</button>
+                <button id="section-btn-quote">Motivational Quote</button>
+                <button id="section-btn-saving-export">Saving and Export</button>
+                <button id="section-btn-color-swatch">Color Swatch</button>
+                <button id="section-btn-color-swatch-editor">Color Swatch Editor</button>
+                <button id="section-btn-palette-splitter">Palette Splitter</button>
+                <button id="section-btn-click">Click Action</button>
+            </div>
+            <div></div>
+        </div>
+    </section>
 </body>
 </html>
